@@ -12,13 +12,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:kiwiupover/ember-cli-soinjs.git"
+    "url": "git@github.com:kiwiupover/ember-cli-spinjs.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kiwiupover/ember-cli-soinjs/issues"
+    "url": "https://github.com/kiwiupover/ember-cli-spinjs/issues"
   },
-  "homepage": "https://github.com/kiwiupover/ember-cli-soinjs",
+  "homepage": "https://github.com/kiwiupover/ember-cli-spinjs",
   "scripts": {
     "postinstall": "sh .setup.sh"
   }
