@@ -16,6 +16,11 @@ function unwatchedTree(dir) {
 }
 
 EmberCLISpinjs.prototype.treeFor = function treeFor(name) {
+    var treepath = path.normalize('node_modules/ember-cli-spinjs/app-addon/'+name);
+    return (fs.existsSync(treepath)) ? unwatchedTree(treepath) : null;
+};
+
+EmberCLISpinjs.prototype.treeFor = function treeFor(name) {
   var treePath = path.join('node_modules/spinjs', name);
 
   if (fs.existsSync(treePath)) {
@@ -24,12 +29,8 @@ EmberCLISpinjs.prototype.treeFor = function treeFor(name) {
 };
 
 EmberCLISpinjs.prototype.included = function included(app) {
-  var stylePath = 'vendor/foundation/css/';
-
-  // Import css from foundation
-  app.import(stylePath + 'normalize.css');
-  app.import(stylePath + 'foundation.css');
-
+    this.app = app;
+    this.app.import('vendor/ember-cli-spinjs/spinjs/spin.js');
 };
 
 module.exports = EmberCLISpinjs;
