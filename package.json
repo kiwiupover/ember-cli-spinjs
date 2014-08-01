@@ -1,0 +1,25 @@
+{
+  "name": "ember-cli-spinjs",
+  "description": "Include spinjs into an ember-cli app. Because we all need a great spinner!",
+  "version": "0.0.1",
+  "author": "Dave Laird",
+  "main": "index.js",
+  "keywords": [
+    "ember-addon",
+    "spinjs",
+    "ember",
+    "ember-cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kiwiupover/ember-cli-soinjs.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kiwiupover/ember-cli-soinjs/issues"
+  },
+  "homepage": "https://github.com/kiwiupover/ember-cli-soinjs",
+  "scripts": {
+    "postinstall": "sh .setup.sh"
+  }
+}

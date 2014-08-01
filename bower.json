@@ -1,0 +1,6 @@
+{
+  "name": "ember-cli-spinjs",
+  "dependencies": {
+    "spinjs": "~2.0.1"
+  }
+}
