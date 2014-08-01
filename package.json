@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-spinjs",
   "description": "Include spinjs into an ember-cli app. Because we all need a great spinner!",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Dave Laird",
   "main": "index.js",
   "keywords": [
