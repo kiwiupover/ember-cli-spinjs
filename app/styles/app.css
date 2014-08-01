@@ -1,0 +1,9 @@
+html, body {
+  margin: 20px;
+}
+
+.spinner-display {
+  height: 100px;
+  width: 100px;
+  position: relative;
+}

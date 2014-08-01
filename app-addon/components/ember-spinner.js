@@ -1,12 +1,14 @@
+/* global Spinner */
+
 import Ember from 'ember';
 
 export default Ember.Component.extend({
 
   classNames: 'spinner-display',
   spinner: null,
-  top: 'auto',
-  left: 'auto',
-  color: "#ffc52e",
+  top: '50%',
+  left: '50%',
+  color: "#333",
   radius: 17,
   length: 0,
   lines: 5,
