@@ -1,22 +1,16 @@
 {
   "name": "ember-cli-spinjs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "directories": {
     "doc": "doc",
     "test": "test"
   },
-  "ember-addon-main": "index.js",
-  "scripts": {
-    "start": "ember server",
-    "build": "ember build",
-    "test": "ember test"
+  "ember-addon": {
+    "main": "lib/ember-cli-spinjs.js",
   },
   "repository": "https://github.com/kiwiupover/ember-cli-spinjs",
-  "engines": {
-    "node": ">= 0.10.0"
-  },
-  "author": "",
+  "author": "David Laird",
   "license": "MIT",
   "devDependencies": {
     "body-parser": "^1.2.0",
