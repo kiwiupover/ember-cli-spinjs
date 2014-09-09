@@ -1,6 +1,7 @@
 {
   "name": "ember-cli-spinjs",
   "version": "0.1.0",
+  "description": "An ember-cli addon to integrate with spin.js",
   "directories": {
     "doc": "doc",
     "test": "test"
