@@ -1,20 +1,8 @@
 /* global require, module */
 
-var mergeTrees = require('broccoli-merge-trees');
+var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
-var appTree    = mergeTrees(['app', 'app-addon'], { overwrite: true });
-var vendorTree = mergeTrees(['vendor', 'vendor-addon']);
-
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
-
-var app = new EmberApp({
-  trees: {
-    app: appTree,
-    vendor: vendorTree
-  }
-});
-
-app.import('vendor/spinjs/spin.js');
+var app = new EmberAddon();
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
@@ -28,5 +16,7 @@ app.import('vendor/spinjs/spin.js');
 // modules that you would like to import into your application
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
+
+
 
 module.exports = app.toTree();
