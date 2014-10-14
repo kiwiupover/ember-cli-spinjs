@@ -1,4 +1,5 @@
 # ember-cli-spinjs
+[![Build Status](https://travis-ci.org/kiwiupover/ember-cli-spinjs.svg)](https://travis-ci.org/kiwiupover/ember-cli-spinjs)
 
 ## Install
 In the root of your ember-cli project directory, run:
@@ -26,3 +27,5 @@ Spinning Lines
 Fast spinning blue dots
 
 Cheers
+
+
