@@ -18,16 +18,16 @@ export default Ember.Component.extend({
 
   didInsertElement: function() {
     var opts = {
-      radius: this.get('radius'),
-      length: this.get('length'),
-      lines: this.get('lines'),
-      width: this.get('width'),
-      speed: this.get('speed'),
-      rotate: this.get('rotate'),
-      top: this.get('top'),
-      left: this.get('left'),
-      color: this.get('color'),
-      hwaccel: true
+      radius:   this.get('radius'),
+      length:   this.get('length'),
+      lines:    this.get('lines'),
+      width:    this.get('width'),
+      speed:    this.get('speed'),
+      rotate:   this.get('rotate'),
+      top:      this.get('top'),
+      left:     this.get('left'),
+      color:    this.get('color'),
+      hwaccel:  true
     };
 
     this.spinner = new Spinner(opts).spin(this.$()[0]);
