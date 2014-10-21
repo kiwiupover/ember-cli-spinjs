@@ -1,0 +1,21 @@
+html, body {
+  margin: 20px auto;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  width: 70%;
+}
+
+.code {
+  background: #ddd;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.spinner-display {
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100px;
+  width: 100%;
+  position: relative;
+}
