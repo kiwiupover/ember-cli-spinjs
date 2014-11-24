@@ -1,4 +1,4 @@
-/* global Spinner */
+// global Spinner require
 
 import Ember from 'ember';
 
@@ -15,8 +15,9 @@ export default Ember.Component.extend({
   width: 22,
   speed: 1.7,
   rotate: 55,
+  configArgs: {},
 
-  didInsertElement: function() {
+  lookupUpConfig: function() {
     var opts = {
       radius:   this.get('radius'),
       length:   this.get('length'),
@@ -30,7 +31,20 @@ export default Ember.Component.extend({
       hwaccel:  true
     };
 
-    this.spinner = new Spinner(opts).spin(this.$()[0]);
+    var configArgs;
+
+    if(this.config) {
+      var configFile = this.emberSpinnerPrefixConfig.modulePrefix + '/config/ember-spinner/' + this.config;
+
+      configArgs = require( configFile ).default;
+    }
+
+    this.spinnerArgs = Ember.$.extend(opts, configArgs);
+
+  }.on('willInsertElement'),
+
+  didInsertElement: function() {
+    this.spinner = new Spinner(this.spinnerArgs).spin(this.$()[0]);
   },
 
   willRemoveElement: function() {
