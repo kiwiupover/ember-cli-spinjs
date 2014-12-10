@@ -32,7 +32,7 @@ another called `ember-spinner` with a file called `standard.js`
 
 ```javascript
 export default {
-  color:  blue,
+  color:  'blue',
   lines:  10,
   length: 30
 }
