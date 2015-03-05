@@ -1,4 +1,4 @@
-// global Spinner require
+/* global Spinner, require */
 
 import Ember from 'ember';
 
