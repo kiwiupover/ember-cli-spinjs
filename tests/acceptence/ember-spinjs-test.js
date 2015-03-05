@@ -17,6 +17,6 @@ asyncTest('three spinners are displayed', function() {
   visit('/');
   Ember.run.later(this, function() {
     start();
-    equal(find('.spinner-display').length, 3);
+    equal(find('.spinner-display').length, 5);
   }, 0);
 });

@@ -6,23 +6,31 @@ Default<br>
   &#123;&#123;ember-spinner&#125;&#125;
 </div>
 
-With Config File<br>
+Spinning Lines<br>
+{{ember-spinner lines=11 length=16 radius=20 width=8 rotate=10 speed='1.1' color='#3498DB'}}
+
+<div class="code">
+  &#123;&#123;ember-spinner lines=11 length=16 radius=20 width=8 rotate=10 speed='1.1' color='#3498DB'&#125;&#125;
+</div>
+
+Fast orange balls<br>
+{{ember-spinner lines=12 radius=10 width=5 rotate=0 speed="3.4" color='orange'}}
+<div class="code">
+  &#123;&#123;ember-spinner lines=12 radius=10 width=5 rotate=0 speed='3.4' color='orange'&#125;&#125;
+</div>
+
+<h3>Using a Config File</h3>
+
+Using a config file called standard<br>
 {{ember-spinner config='standard'}}
 
-Spinning Lines<br>
-{{ember-spinner lines=11 length=16 radius=30 width=8 rotate=10 speed='1.1' color='#ffc52e'}}
-
 <div class="code">
-  &#123;&#123;ember-spinner lines=11 length=16 radius=30 width=8 rotate=10 speed='1.1' color='#ffc52e'&#125;&#125;
+  &#123;&#123;ember-spinner config='standard'&#125;&#125;
 </div>
 
-Fast blue balls<br>
-{{ember-spinner lines=18 radius=10 width=5 rotate=0 speed="3.4" color='blue'}}
+With a config file called small<br>
+{{ember-spinner config='small'}}
+
 <div class="code">
-  &#123;&#123;ember-spinner lines=18 radius=10 width=5 rotate=0 speed='3.4' color='blue'&#125;&#125;
+  &#123;&#123;ember-spinner config='small'&#125;&#125;
 </div>
-
-
-
-
-
