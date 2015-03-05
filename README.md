@@ -39,12 +39,12 @@ export default {
 ```
 
 ```handlebars
-{{ember-spinner lines=11 length=16 raidus=30 width=8 rotate=10 speed='1.1' color="#ffc52e"}}
+{{ember-spinner lines=11 length=16 radius=30 width=8 rotate=10 speed='1.1' color="#ffc52e"}}
 ```
 Spinning Lines
 
 ```handlebars
-{{ember-spinner lines=18 raidus=10 width=5 rotate=0 speed="3.4" color='blue'}}
+{{ember-spinner lines=18 radius=10 width=5 rotate=0 speed="3.4" color='blue'}}
 ```
 Fast spinning blue dots
 
