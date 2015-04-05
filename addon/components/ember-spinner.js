@@ -15,6 +15,7 @@ export default Ember.Component.extend({
   width: 22,
   speed: 1.7,
   rotate: 55,
+  zIndex: 2000000000,
   configArgs: {},
 
   lookupUpConfig: function() {
@@ -28,6 +29,7 @@ export default Ember.Component.extend({
       top:      this.get('top'),
       left:     this.get('left'),
       color:    this.get('color'),
+      zIndex:    this.get('zIndex'),
       hwaccel:  true
     };
 
