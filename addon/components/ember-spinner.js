@@ -18,7 +18,7 @@ export default Ember.Component.extend({
   zIndex: 2000000000,
   configArgs: {},
 
-  lookupUpConfig: function() {
+  lookupUpConfig: Ember.on('willInsertElement', function() {
     var opts = {
       radius:   this.get('radius'),
       length:   this.get('length'),
@@ -29,7 +29,6 @@ export default Ember.Component.extend({
       top:      this.get('top'),
       left:     this.get('left'),
       color:    this.get('color'),
-      zIndex:    this.get('zIndex'),
       hwaccel:  true
     };
 
@@ -43,7 +42,8 @@ export default Ember.Component.extend({
 
     this.spinnerArgs = Ember.$.extend(opts, configArgs);
 
-  }.on('willInsertElement'),
+  }),
+
 
   didInsertElement: function() {
     this.spinner = new Spinner(this.spinnerArgs).spin(this.$()[0]);
