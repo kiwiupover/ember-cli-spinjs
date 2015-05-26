@@ -16,7 +16,7 @@ In the root of your ember-cli project directory, run:
 ## Usage
 Now you in your templates you can use `{{ember-spinner}}` to add a spinner to your page.
 
-[View Demo](http://ember-cli-spinjs.s3-website-us-east-1.amazonaws.com)
+[View Demo](http://ember-cli-spinjs.surge.sh/)
 
 ```handlebars
 {{ember-spinner}}
@@ -34,7 +34,8 @@ another called `ember-spinner` with a file called `standard.js`
 export default {
   color:  'blue',
   lines:  10,
-  length: 30
+  length: 30,
+  zIndex: 200000
 }
 ```
 

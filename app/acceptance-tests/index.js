@@ -1,0 +1,1 @@
+export { default } from 'ember-cli-spinjs/acceptance-tests/index';
