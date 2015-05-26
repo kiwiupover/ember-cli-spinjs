@@ -1,5 +1,6 @@
 # Ember-cli Spinjs
 [![Build Status](https://travis-ci.org/kiwiupover/ember-cli-spinjs.svg)](https://travis-ci.org/kiwiupover/ember-cli-spinjs)
+[![Ember Observer Score](http://emberobserver.com/badges/ember-cli-spinjs.svg)](http://emberobserver.com/addons/ember-cli-spinjs)
 
 ## Install
 In the root of your ember-cli project directory, run:
