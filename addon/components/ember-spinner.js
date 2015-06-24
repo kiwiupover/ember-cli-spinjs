@@ -34,8 +34,8 @@ export default Ember.Component.extend({
 
     var configArgs;
 
-    if(this.config) {
-      var configFile = this.emberSpinnerPrefixConfig.modulePrefix + '/config/ember-spinner/' + this.config;
+    if(this.get('config')) {
+      var configFile = this.emberSpinnerPrefixConfig.modulePrefix + '/config/ember-spinner/' + this.get('config');
 
       configArgs = require( configFile ).default;
     }

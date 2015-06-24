@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-spinjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An ember-cli addon to integrate with spin.js",
   "directories": {
     "doc": "doc",
@@ -25,7 +25,7 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
-    "ember-cli": "0.2.5",
+    "ember-cli": "0.2.7",
     "ember-cli-app-version": "0.3.3",
     "ember-cli-content-security-policy": "0.4.0",
     "ember-cli-dependency-checker": "^1.0.0",
