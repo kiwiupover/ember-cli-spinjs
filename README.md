@@ -6,13 +6,8 @@
 In the root of your ember-cli project directory, run:
 
 ```bash
-  npm install --save-dev ember-cli-spinjs
-
-  ember generate ember-cli-spinjs
+  ember install ember-cli-spinjs
 ```
-
-
-
 
 ## Usage
 Now you in your templates you can use `{{ember-spinner}}` to add a spinner to your page.
@@ -28,7 +23,7 @@ Default
 ```handlebars
 {{ember-spinner config='standard'}}
 ```
-Add two folders to your app the  first called `config` and in that folder
+Add two folders to your app the first called `config` and in that folder
 another called `ember-spinner` with a file called `standard.js`
 
 ```javascript
