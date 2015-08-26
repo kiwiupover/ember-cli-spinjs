@@ -43,7 +43,7 @@ Spinning Lines
 ```handlebars
 {{ember-spinner lines=18 radius=10 width=5 rotate=0 speed="3.4" color='blue'}}
 ```
-Fast spinning blue dots
+Fast spinning blue dots.
 
 The [Spin.js docs](http://fgnass.github.io/spin.js/)
 
