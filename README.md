@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.org/kiwiupover/ember-cli-spinjs.svg)](https://travis-ci.org/kiwiupover/ember-cli-spinjs)
 [![Ember Observer Score](http://emberobserver.com/badges/ember-cli-spinjs.svg)](http://emberobserver.com/addons/ember-cli-spinjs)
 [![Code Climate](https://codeclimate.com/github/kiwiupover/ember-cli-spinjs/badges/gpa.svg)](https://codeclimate.com/github/kiwiupover/ember-cli-spinjs)
+[![npm version](https://badge.fury.io/js/ember-cli-spinjs.svg)](http://badge.fury.io/js/ember-cli-spinjs)
 
 ## Install
 In the root of your ember-cli project directory, run:
