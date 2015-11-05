@@ -39,7 +39,8 @@
     "ember-export-application-global": "^1.0.2",
     "ember-try": "0.0.4",
     "ember-watson": "^0.5.0",
-    "glob": "^4.0.5"
+    "glob": "^4.0.5",
+    "phantomjs": "^1.9.18"
   },
   "dependencies": {
     "ember-cli-babel": "^5.0.0"
