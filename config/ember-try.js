@@ -5,6 +5,12 @@ module.exports = {
       dependencies: { }
     },
     {
+      name: 'ember-2.0.0',
+      dependencies: {
+        'ember': '2.0.0'
+      }
+    },
+    {
       name: 'ember-release',
       dependencies: {
         'ember': 'components/ember#release'
