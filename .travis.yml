@@ -1,7 +1,7 @@
 ---
 language: node_js
 node_js:
-  - "0.12"
+  - "4.2"
 
 sudo: false
 
@@ -11,8 +11,14 @@ cache:
 
 env:
   - EMBER_TRY_SCENARIO=default
-  - EMBER_TRY_SCENARIO=ember-1.13.11
+  - EMBER_TRY_SCENARIO=ember-1.11
+  - EMBER_TRY_SCENARIO=ember-1.12
+  - EMBER_TRY_SCENARIO=ember-1.13
+  - EMBER_TRY_SCENARIO=ember-2.0.0
+  - EMBER_TRY_SCENARIO=ember-2.1.0
   - EMBER_TRY_SCENARIO=ember-2.2.0
+  - EMBER_TRY_SCENARIO=ember-2.3.0
+  - EMBER_TRY_SCENARIO=ember-2.4.0
   - EMBER_TRY_SCENARIO=ember-release
   - EMBER_TRY_SCENARIO=ember-beta
   - EMBER_TRY_SCENARIO=ember-canary
@@ -28,9 +34,10 @@ before_install:
   - "npm install -g npm@^2"
 
 install:
+  - node --version
   - npm install -g bower
   - npm install
   - bower install
 
 script:
-  - ember try $EMBER_TRY_SCENARIO test
+  - ember try:each
