@@ -18,6 +18,6 @@ test('Five spinners are displayed', function(assert) {
   visit('/');
 
   andThen(function() {
-    assert.equal(find('.spinner-display').length, 5);
+    assert.equal(find('.spinner-display').length, 6);
   });
 });
