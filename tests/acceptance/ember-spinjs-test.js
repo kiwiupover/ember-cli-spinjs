@@ -2,7 +2,7 @@ import Ember from 'ember';
 import { module, test } from 'qunit';
 import startApp from '../helpers/start-app';
 
-var application;
+let application;
 
 module('Acceptance | Display Spinners', {
   beforeEach: function() {
@@ -14,7 +14,7 @@ module('Acceptance | Display Spinners', {
   }
 });
 
-test('Five spinners are displayed', function(assert) {
+test('Six spinners are displayed', function(assert) {
   visit('/');
 
   andThen(function() {
