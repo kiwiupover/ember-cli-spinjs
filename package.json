@@ -54,7 +54,7 @@
     "loader.js": "^4.0.0"
   },
   "dependencies": {
-    "ember-cli-babel": "^5.1.5"
+    "ember-cli-babel": "^5.1.8"
   },
   "bugs": {
     "url": "https://github.com/kiwiupover/ember-cli-spinjs/issues"
