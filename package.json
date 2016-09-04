@@ -42,7 +42,7 @@
     "ember-cli-qunit": "^3.0.0",
     "ember-cli-release": "0.2.8",
     "ember-cli-sri": "^2.1.1",
-    "ember-cli-surge": "1.1.8",
+    "ember-cli-surge": "1.1.10",
     "ember-cli-uglify": "^1.2.0",
     "ember-disable-prototype-extensions": "^1.1.0",
     "ember-disable-proxy-controllers": "^1.0.1",
