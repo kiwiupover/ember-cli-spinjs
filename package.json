@@ -23,7 +23,7 @@
     "build": "ember build",
     "start": "ember server",
     "test": "ember try:testall",
-    "publish:patch": "npm version patch && git push origin --tags && npm publish"
+    "publish:patch": "npm whoami && npm version patch && git push origin --tags && npm publish"
   },
   "repository": "https://github.com/kiwiupover/ember-cli-spinjs",
   "engines": {
