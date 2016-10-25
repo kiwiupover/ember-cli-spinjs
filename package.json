@@ -51,7 +51,7 @@
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.1.0",
     "ember-try": "0.2.6",
-    "loader.js": "^4.0.1"
+    "loader.js": "^4.0.10"
   },
   "dependencies": {
     "ember-cli-babel": "^5.1.9"
