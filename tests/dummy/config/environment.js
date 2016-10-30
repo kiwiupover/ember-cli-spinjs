@@ -19,10 +19,6 @@ module.exports = function(environment) {
     }
   };
 
-  ENV.contentSecurityPolicy = {
-    'style-src': "'self' 'unsafe-inline'"
-  };
-
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -33,7 +29,6 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.rootURL = '/';
     ENV.locationType = 'none';
 
     // keep test console output quieter
