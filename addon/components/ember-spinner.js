@@ -30,7 +30,6 @@ export default Ember.Component.extend({
       corners:   this.get('corners'),
       direction: this.get('direction'),
       fps:       this.get('fps'),
-      hwaccel:   true,
       left:      this.get('left'),
       length:    this.get('length'),
       lines:     this.get('lines'),
@@ -43,6 +42,7 @@ export default Ember.Component.extend({
       top:       this.get('top'),
       trail:     this.get('trail'),
       width:     this.get('width'),
+      hwaccel:   true
     };
 
     var configArgs;

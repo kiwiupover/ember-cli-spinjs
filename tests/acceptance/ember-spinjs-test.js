@@ -1,20 +1,9 @@
-import Ember from 'ember';
-import { module, test } from 'qunit';
-import startApp from '../helpers/start-app';
+import { test } from 'qunit';
+import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
 
-let application;
+moduleForAcceptance('Acceptance | ember spinner');
 
-module('Acceptance | Display Spinners', {
-  beforeEach: function() {
-    application = startApp();
-  },
-
-  afterEach: function() {
-    Ember.run(application, 'destroy');
-  }
-});
-
-test('Six spinners are displayed', function(assert) {
+test('The index displays six ember-spinner', function(assert) {
   visit('/');
 
   andThen(function() {
