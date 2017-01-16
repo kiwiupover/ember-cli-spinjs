@@ -51,7 +51,7 @@
     "ember-export-application-global": "^1.1.1",
     "ember-load-initializers": "^0.6.0",
     "ember-resolver": "^2.1.0",
-    "ember-try": "0.2.7",
+    "ember-try": "0.2.9",
     "loader.js": "^4.0.10"
   },
   "dependencies": {
