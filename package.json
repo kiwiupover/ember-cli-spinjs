@@ -55,7 +55,7 @@
     "loader.js": "^4.0.10"
   },
   "dependencies": {
-    "ember-cli-babel": "^5.1.9",
+    "ember-cli-babel": "^6.0.0",
     "ember-cli-node-assets": "0.2.2",
     "spin.js": "^2.3.2"
   },
