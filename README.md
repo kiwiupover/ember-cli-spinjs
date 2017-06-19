@@ -1,4 +1,6 @@
 # Ember-cli Spinjs
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/kiwiupover/ember-cli-spinjs.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/kiwiupover/ember-cli-spinjs.svg)](https://travis-ci.org/kiwiupover/ember-cli-spinjs)
 [![Ember Observer Score](http://emberobserver.com/badges/ember-cli-spinjs.svg)](http://emberobserver.com/addons/ember-cli-spinjs)
 [![Code Climate](https://codeclimate.com/github/kiwiupover/ember-cli-spinjs/badges/gpa.svg)](https://codeclimate.com/github/kiwiupover/ember-cli-spinjs)
