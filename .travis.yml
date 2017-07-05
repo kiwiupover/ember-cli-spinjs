@@ -28,5 +28,3 @@ script:
 
 after_success:
   - ember surge
-  on:
-    branch: master
