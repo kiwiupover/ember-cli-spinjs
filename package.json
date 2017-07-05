@@ -6,7 +6,7 @@
     "configPath": "tests/dummy/config",
     "demoURL": "http://ember-cli-spinjs.surge.sh",
     "versionCompatibility": {
-      "ember": ">=1.11.0"
+      "ember": "~1.13.0 || ~2.4.0 || > 2.8.0"
     }
   },
   "keywords": [
