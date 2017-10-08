@@ -42,6 +42,7 @@ export default Ember.Component.extend({
       top:       this.get('top'),
       trail:     this.get('trail'),
       width:     this.get('width'),
+      zIndex:    this.get('zIndex'),
       hwaccel:   true
     };
 
