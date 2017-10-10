@@ -1,8 +1,10 @@
 /* global Spinner, require */
 
-import Ember from 'ember';
+import { merge } from "@ember/polyfills";
+import Component from "@ember/component";
+import { on } from "@ember/object/evented";
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: 'spinner-display',
   color: "#333",
   corners: 1,
@@ -24,8 +26,8 @@ export default Ember.Component.extend({
   spinner: null,
   configArgs: {},
 
-  lookupUpConfig: Ember.on('willInsertElement', function() {
-    var opts = {
+  lookupUpConfig: on('willInsertElement', function() {
+    let opts = {
       color:     this.get('color'),
       corners:   this.get('corners'),
       direction: this.get('direction'),
@@ -49,12 +51,12 @@ export default Ember.Component.extend({
     var configArgs;
 
     if(this.get('config')) {
-      var configFile = this.emberSpinnerPrefixConfig.modulePrefix + '/config/ember-spinner/' + this.get('config');
+      let configFile = this.emberSpinnerPrefixConfig.modulePrefix + '/config/ember-spinner/' + this.get('config');
 
       configArgs = require( configFile ).default;
     }
 
-    this.spinnerArgs = Ember.$.extend(opts, configArgs);
+    this.spinnerArgs = merge(opts, configArgs);
 
   }),
 
