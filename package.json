@@ -24,14 +24,13 @@
   },
   "repository": "https://github.com/kiwiupover/ember-cli-spinjs",
   "engines": {
-    "node": ">= 4"
+    "node": "^4.5 || 6.* || >= 7.*"
   },
   "author": "David Laird",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.5.0",
-    "ember-cli": "2.15.1",
-    "ember-cli-commands": "^1.0.0-beta.1",
+    "ember-cli": "2.16.0",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-eslint": "^4.1.0",
     "ember-cli-htmlbars": "^2.0.1",
@@ -51,7 +50,7 @@
     "loader.js": "^4.2.3"
   },
   "dependencies": {
-    "ember-cli-babel": "^6.3.0",
+    "ember-cli-babel": "^6.6.0",
     "ember-cli-node-assets": "0.2.2",
     "spin.js": "^2.3.2"
   },
