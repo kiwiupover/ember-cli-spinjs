@@ -1,8 +1,8 @@
-/* global Spinner, require */
+/* global require */
 
+import { Spinner } from "spin.js";
 import { merge } from "@ember/polyfills";
 import Component from "@ember/component";
-import { on } from "@ember/object/evented";
 
 export default Component.extend({
   classNames: 'spinner-display',
@@ -25,9 +25,14 @@ export default Component.extend({
   zIndex: 2000000000,
   position: 'absolute',
   spinner: null,
-  configArgs: {},
 
-  lookupUpConfig: on('willInsertElement', function() {
+  init() {
+    this._super(...arguments);
+    this.configArgs = {};
+  },
+
+  willInsertElement() {
+    this._super(...arguments);
     let opts = {
       color:     this.get('color'),
       corners:   this.get('corners'),
@@ -50,24 +55,23 @@ export default Component.extend({
       hwaccel:   true
     };
 
-    var configArgs;
+    let configArgs;
 
     if(this.get('config')) {
-      let configFile = this.emberSpinnerPrefixConfig.modulePrefix + '/config/ember-spinner/' + this.get('config');
+      let modulePrefix = this.emberSpinnerPrefixConfig.modulePrefix;
+      let configFile = `${modulePrefix}/config/ember-spinner/${this.get('config')}`;
 
-      configArgs = require( configFile ).default;
+      configArgs = require(configFile).default;
     }
 
     this.spinnerArgs = merge(opts, configArgs);
-
-  }),
-
-
-  didInsertElement: function() {
-    this.spinner = new Spinner(this.spinnerArgs).spin(this.$()[0]);
   },
 
-  willRemoveElement: function() {
+  didInsertElement() {
+    this.spinner = new Spinner(this.spinnerArgs).spin(this.element);
+  },
+
+  willRemoveElement() {
     this.spinner.stop();
   }
 
