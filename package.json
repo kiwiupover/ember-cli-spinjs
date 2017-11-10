@@ -52,7 +52,7 @@
   "dependencies": {
     "ember-cli-babel": "^6.6.0",
     "ember-cli-node-assets": "0.2.2",
-    "spin.js": "^2.3.2"
+    "spin.js": "^3.0.0"
   },
   "bugs": {
     "url": "https://github.com/kiwiupover/ember-cli-spinjs/issues"
