@@ -23,6 +23,7 @@ export default Component.extend({
   trail: 100,
   width: 5,
   zIndex: 2000000000,
+  position: 'absolute',
   spinner: null,
   configArgs: {},
 
@@ -45,6 +46,7 @@ export default Component.extend({
       trail:     this.get('trail'),
       width:     this.get('width'),
       zIndex:    this.get('zIndex'),
+      position:  this.get('position'),
       hwaccel:   true
     };
 
