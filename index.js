@@ -1,13 +1,16 @@
-/* jshint node: true */
+/* eslint-env node */
 'use strict';
 
 module.exports = {
   name: 'ember-cli-spinjs',
-  options: {
-    nodeAssets: {
-      'spin.js': {
-        import: ['spin.js']
-      }
-    }
+  included() {
+    this._super.included.apply(this, arguments);
+
+    this.import('node_modules/spin.js/spin.js', {
+      using: [
+        { transformation: 'es6', as: 'spin.js' }
+      ]
+    });
   }
+
 };
