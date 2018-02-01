@@ -1,4 +1,3 @@
-/* eslint-env node */
 module.exports = {
   test_page: 'tests/index.html?hidepassed',
   disable_watching: true,
@@ -12,10 +11,12 @@ module.exports = {
     Chrome: {
       mode: 'ci',
       args: [
-        '--disable-gpu',
-        '--headless',
-        '--remote-debugging-port=9222',
-        '--window-size=1440,900'
+        "--headless",
+        "--disable-gpu",
+        "--remote-debugging-port=9222",
+        "--remote-debugging-address=0.0.0.0",
+        "--no-sandbox",
+        "--user-data-dir=/tmp"
       ]
     },
   }
