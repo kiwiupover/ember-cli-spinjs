@@ -13,7 +13,8 @@
     "ember-addon",
     "ember-cli",
     "spinjs",
-    "ember-cli-spinjs"
+    "ember-cli-spinjs",
+    "spinner"
   ],
   "scripts": {
     "build": "ember build",
