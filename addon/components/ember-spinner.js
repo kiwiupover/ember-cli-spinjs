@@ -68,7 +68,7 @@ export default Component.extend({
   },
 
   didInsertElement() {
-    this.spinner = new Spinner(this.spinnerArgs).spin(this.$()[0]);
+    this.spinner = new Spinner(this.spinnerArgs).spin(this.element);
   },
 
   willRemoveElement() {
