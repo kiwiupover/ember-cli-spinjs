@@ -51,6 +51,6 @@ Fast spinning blue dots.
 
 The [Spin.js docs](http://fgnass.github.io/spin.js/)
 
-jQuery is no longer a dependency.
+jQuery is no longer a dependency
 
 Cheers
