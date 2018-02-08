@@ -9,7 +9,6 @@ dist: trusty
 cache:
   yarn: true
 
-
 addons:
   apt:
     sources:
