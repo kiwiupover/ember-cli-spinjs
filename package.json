@@ -20,6 +20,7 @@
     "lint:js": "eslint ./*.js addon addon-test-support app config lib server test-support tests",
     "start": "ember server",
     "test": "ember try:each",
+    "deploy": "ember surge",
     "publish:patch": "npm whoami && npm version patch && git push origin --tags && npm publish",
     "publish:minor": "npm whoami && npm version minor && git push origin --tags && npm publish"
   },
