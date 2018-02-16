@@ -1,122 +1,99 @@
-defaults: &defaults
-  docker:
-    - image: circleci/node:6-browsers
-      environment:
-        JOBS: 2
-  working_directory: ~/ember-cli-spinjs
+version: 2.0
+references:
+  container_config: &container_config
+    docker:
+      - image: circleci/node:4.8.7-browsers
+    working_directory: ~/ember-cli-spinjs
 
-version: 2
+  restore_repo: &restore_repo
+    restore_cache:
+      keys:
+        - v1-repo-{{ .Branch }}-{{ .Revision }}
+        - v1-repo-{{ .Branch }}
+        - v1-repo
+
+  restore_node_modules: &restore_node_modules
+    restore_cache:
+      keys:
+        - v1-dependencies-{{ checksum "package.json" }}
+        - v1-dependencies
+
 jobs:
   checkout_code:
-    <<: *defaults
+    <<: *container_config
     steps:
+      - *restore_repo
       - checkout
-      - persist_to_workspace:
-          root: .
+      - save_cache:
+          key: v1-repo-{{ .Branch }}-{{ .Revision }}
           paths:
             - .
 
   install_dependencies:
-    <<: *defaults
+    <<: *container_config
     steps:
-      - attach_workspace:
-          at: .
-      - run:
-          name: Yarn Install
-          command: yarn install --non-interactive --no-lockfile
-      - persist_to_workspace:
-          root: .
+      - *restore_repo
+      - *restore_node_modules
+      - run: yarn install
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
           paths:
-            - .
+            - node_modules
 
   deploy_master:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: .
-      - run:
-          name: Deploy Master
-          command: yarn deploy
+      <<: *container_config
+      steps:
+        - *restore_repo
+        - *restore_node_modules
+        - run:
+            name: Deploy Master
+            command: yarn deploy
 
-  test_default:
-    <<: *defaults
+  test-1-13:
+    <<: *container_config
     steps:
-      - attach_workspace:
-          at: .
-      - run: echo 'export PATH=~/ember-cli-spinjs/node_modules/.bin:$PATH' >> $BASH_ENV
-      - run:
-          name: Run Tests
-          command: ember test
+      - *restore_repo
+      - *restore_node_modules
+      - run: node_modules/.bin/ember try:one ember-1-13 --skip-cleanup
 
-  test_lts_2_12:
-    <<: *defaults
+  test-lts-2.12:
+    <<: *container_config
     steps:
-      - attach_workspace:
-          at: .
-      - run: echo 'export PATH=~/ember-cli-spinjs/node_modules/.bin:$PATH' >> $BASH_ENV
-      - run:
-          name: Run Tests
-          command: ember try:one ember-lts-2.12 --skip-cleanup=true
+      - *restore_repo
+      - *restore_node_modules
+      - run: node_modules/.bin/ember try:one ember-lts-2.12 --skip-cleanup
 
-  test_lts_2_16:
-    <<: *defaults
+  test-lts-2.16:
+    <<: *container_config
     steps:
-      - attach_workspace:
-          at: .
-      - run: echo 'export PATH=~/ember-cli-spinjs/node_modules/.bin:$PATH' >> $BASH_ENV
-      - run:
-          name: Run Tests
-          command: ember try:one ember-lts-2.16 --skip-cleanup=true
+      - *restore_repo
+      - *restore_node_modules
+      - run: node_modules/.bin/ember try:one ember-lts-2.16 --skip-cleanup
 
-  test_release:
-    <<: *defaults
+  test-release:
+    <<: *container_config
     steps:
-      - attach_workspace:
-          at: .
-      - run: echo 'export PATH=~/ember-cli-spinjs/node_modules/.bin:$PATH' >> $BASH_ENV
-      - run:
-          name: Run Tests
-          command: ember try:one ember-release --skip-cleanup=true
+      - *restore_repo
+      - *restore_node_modules
+      - run: node_modules/.bin/ember try:one ember-release --skip-cleanup
 
-  test_beta:
-    <<: *defaults
+  test-beta:
+    <<: *container_config
     steps:
-      - attach_workspace:
-          at: .
-      - run: echo 'export PATH=~/ember-cli-spinjs/node_modules/.bin:$PATH' >> $BASH_ENV
-      - run:
-          name: Run Tests
-          command: ember try:one ember-beta --skip-cleanup=true
+      - *restore_repo
+      - *restore_node_modules
+      - run: node_modules/.bin/ember try:one ember-beta --skip-cleanup
 
-workflows:
-  version: 2
-  test_matrix:
-    jobs:
-      - checkout_code
-      - install_dependencies:
-          requires:
-            - checkout_code
-      - test_default:
-          requires:
-            - install_dependencies
-      - test_lts_2_12:
-          requires:
-            - install_dependencies
-      - test_lts_2_16:
-          requires:
-            - install_dependencies
-      - test_release:
-          requires:
-            - install_dependencies
-      - test_beta:
-          requires:
-            - install_dependencies
-      - deploy_master:
-          requires:
-            - test_default
-            - test_lts_2_12
-            - test_lts_2_16
-            - test_release
-          filters:
-            branches:
-              only: add-circle-cli
+  test-canary:
+    <<: *container_config
+    steps:
+      - *restore_repo
+      - *restore_node_modules
+      - run: node_modules/.bin/ember try:one ember-canary --skip-cleanup
+
+  test-default:
+    <<: *container_config
+    steps:
+      - *restore_repo
+      - *restore_node_modules
+      - run: node_modules/.bin/ember try:one ember-default --skip-cleanup
