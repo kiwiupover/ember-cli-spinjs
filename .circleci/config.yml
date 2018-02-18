@@ -1,0 +1,150 @@
+version: 2.0
+references:
+  container_config: &container_config
+    docker:
+      - image: circleci/node:4.8.7-browsers
+    working_directory: ~/ember-cli-spinjs
+
+  restore_repo: &restore_repo
+    restore_cache:
+      keys:
+        - v1-repo-{{ .Branch }}-{{ .Revision }}
+        - v1-repo-{{ .Branch }}
+        - v1-repo
+
+  restore_node_modules: &restore_node_modules
+    restore_cache:
+      keys:
+        - v1-dependencies-{{ checksum "package.json" }}
+        - v1-dependencies
+
+jobs:
+  checkout_code:
+    <<: *container_config
+    steps:
+      - *restore_repo
+      - checkout
+      - save_cache:
+          key: v1-repo-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - .
+
+  install_dependencies:
+    <<: *container_config
+    steps:
+      - *restore_repo
+      - *restore_node_modules
+      - run: yarn install
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+
+  deploy_master:
+      <<: *container_config
+      steps:
+        - *restore_repo
+        - *restore_node_modules
+        - run:
+            name: Deploy Master
+            command: yarn deploy
+
+  test-1-13:
+    <<: *container_config
+    steps:
+      - *restore_repo
+      - *restore_node_modules
+      - run: node_modules/.bin/ember try:one ember-1-13 --skip-cleanup
+
+  test-lts-2.12:
+    <<: *container_config
+    steps:
+      - *restore_repo
+      - *restore_node_modules
+      - run: node_modules/.bin/ember try:one ember-lts-2.12 --skip-cleanup
+
+  test-lts-2.16:
+    <<: *container_config
+    steps:
+      - *restore_repo
+      - *restore_node_modules
+      - run: node_modules/.bin/ember try:one ember-lts-2.16 --skip-cleanup
+
+  test-release:
+    <<: *container_config
+    steps:
+      - *restore_repo
+      - *restore_node_modules
+      - run: node_modules/.bin/ember try:one ember-release --skip-cleanup
+
+  test-beta:
+    <<: *container_config
+    steps:
+      - *restore_repo
+      - *restore_node_modules
+      - run: node_modules/.bin/ember try:one ember-beta --skip-cleanup
+
+  test-canary:
+    <<: *container_config
+    steps:
+      - *restore_repo
+      - *restore_node_modules
+      - run: node_modules/.bin/ember try:one ember-canary --skip-cleanup
+
+  test-default:
+    <<: *container_config
+    steps:
+      - *restore_repo
+      - *restore_node_modules
+      - run: node_modules/.bin/ember try:one ember-default --skip-cleanup
+
+workflows:
+  version: 2
+
+  build_test:
+    jobs:
+      - checkout_code
+
+      - install_dependencies:
+          requires:
+            - checkout_code
+
+      - test-lts-2.12:
+          requires:
+            - install_dependencies
+
+      - test-lts-2.16:
+          requires:
+            - install_dependencies
+
+      - test-1-13:
+          requires:
+            - install_dependencies
+
+      - test-default:
+          requires:
+            - install_dependencies
+
+      - test-release:
+          requires:
+            - install_dependencies
+
+      - test-beta:
+          requires:
+            - install_dependencies
+
+      - test-canary:
+          requires:
+            - install_dependencies
+
+      - deploy_master:
+          requires:
+            - test-lts-2.12
+            - test-lts-2.16
+            - test-1-13
+            - test-default
+            - test-release
+            - test-beta
+          filters:
+            branches:
+              only: master
