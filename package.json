@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-spinjs",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "An ember addon to integrate with spin.js",
   "ember-addon": {
     "configPath": "tests/dummy/config",
