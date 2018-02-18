@@ -1,12 +1,12 @@
 /* global require */
 
-import { Spinner } from "spin.js";
-import { merge } from "@ember/polyfills";
-import Component from "@ember/component";
+import { Spinner } from 'spin';
+import { merge } from '@ember/polyfills';
+import Component from '@ember/component';
 
 export default Component.extend({
   classNames: 'spinner-display',
-  color: "#333",
+  color: '#333',
   corners: 1,
   direction: 1,
   fps: 20,
