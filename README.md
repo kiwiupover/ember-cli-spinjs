@@ -49,8 +49,16 @@ Spinning Lines
 ```
 Fast spinning blue dots.
 
-The [Spin.js docs](http://fgnass.github.io/spin.js/)
 
+### Dependencies
+
+##### Spin.js
+The [Spin.js docs](http://fgnass.github.io/spin.js/)
 jQuery is no longer a dependency
+
+### Linting
+
+* `npm run lint:js`
+* `npm run lint:js -- --fix`
 
 Cheers

@@ -1,33 +1,35 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { findAll, render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('ember-spinner', 'Integration | Component | ember spinner', {
-  integration: true
-});
+module('Integration | Component | ember spinner', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('renders the default ember-spinner', function(assert) {
-  this.render(hbs`{{ember-spinner}}`);
+  test('renders the default ember-spinner', async function(assert) {
+    await render(hbs`{{ember-spinner}}`);
 
-  assert.equal(this.$('.spinner').length, 1, 'Creates a wrapper div with the class "spinner"');
-  assert.equal(this.$('.spinner > div').length, 12, 'Default spinner has 12 lines');
-});
+    assert.equal(findAll('.spinner').length, 1, 'Creates a wrapper div with the class "spinner"');
+    assert.equal(findAll('.spinner > div').length, 12, 'Default spinner has 12 lines');
+  });
 
-test('can configure ember-spinner', function(assert) {
-  let lines = 11;
+  test('can configure ember-spinner', async function(assert) {
+    let lines = 11;
 
-  this.set('lines', lines);
+    this.set('lines', lines);
 
-  this.render(hbs`{{ember-spinner lines=lines}}`);
+    await render(hbs`{{ember-spinner lines=lines}}`);
 
-  assert.equal(this.$('.spinner').length, 1, 'Creates a wrapper div with the class "spinner"');
-  assert.equal(this.$('.spinner:first > div').length, lines, 'can configure number of lines');
-});
+    assert.equal(findAll('.spinner').length, 1, 'Creates a wrapper div with the class "spinner"');
+    assert.equal(this.$('.spinner:first > div').length, lines, 'can configure number of lines');
+  });
 
-test('can add multiple spinners', function(assert) {
-  this.render(hbs`
-    {{ember-spinner}}
-    {{ember-spinner}}
-  `);
+  test('can add multiple spinners', async function(assert) {
+    await render(hbs`
+      {{ember-spinner}}
+      {{ember-spinner}}
+    `);
 
-  assert.equal(this.$('.spinner').length, 2, 'Can include multiple ember-spinners');
+    assert.equal(findAll('.spinner').length, 2, 'Can include multiple ember-spinners');
+  });
 });
