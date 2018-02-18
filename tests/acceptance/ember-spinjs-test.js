@@ -1,12 +1,13 @@
-import { test } from 'qunit';
-import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
+import { module, test } from 'qunit';
+import { findAll, visit } from '@ember/test-helpers';
+import { setupApplicationTest } from 'ember-qunit';
 
-moduleForAcceptance('Acceptance | ember spinner');
+module('Acceptance | ember spinner', function(hooks) {
+  setupApplicationTest(hooks);
 
-test('The index displays six ember-spinner', function(assert) {
-  visit('/');
+  test('The index displays six ember-spinner', async function(assert) {
+    await visit('/');
 
-  andThen(function() {
-    assert.equal(find('.spinner-display').length, 6);
+    assert.equal(findAll('.spinner-display').length, 6);
   });
 });
