@@ -1,6 +1,7 @@
 # Ember-cli Spinjs
 
-[![CircleCI](https://circleci.com/gh/kiwiupover/ember-cli-spinjs/tree/master.svg?style=svg)](https://circleci.com/gh/kiwiupover/ember-cli-spinjs/tree/master)
+
+[![CircleCI](https://circleci.com/gh/kiwiupover/ember-cli-spinjs.svg?style=shield)](https://circleci.com/gh/kiwiupover/ember-cli-spinjs/tree/master)
 [![Ember Observer Score](http://emberobserver.com/badges/ember-cli-spinjs.svg)](http://emberobserver.com/addons/ember-cli-spinjs)
 [![Code Climate](https://codeclimate.com/github/kiwiupover/ember-cli-spinjs/badges/gpa.svg)](https://codeclimate.com/github/kiwiupover/ember-cli-spinjs)
 [![npm version](https://badge.fury.io/js/ember-cli-spinjs.svg)](http://badge.fury.io/js/ember-cli-spinjs)
