@@ -57,7 +57,7 @@
     "loader.js": "^4.2.3"
   },
   "dependencies": {
-    "broccoli-merge-trees": "^2.0.0",
+    "broccoli-merge-trees": "^3.0.0",
     "broccoli-rollup": "^2.0.0",
     "ember-cli-babel": "^6.6.0",
     "ember-cli-es6-transform": "^0.0.3",
