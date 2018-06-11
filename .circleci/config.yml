@@ -70,6 +70,13 @@ jobs:
       - *restore_node_modules
       - run: node_modules/.bin/ember try:one ember-lts-2.16 --skip-cleanup
 
+  test-lts-2.18:
+    <<: *container_config
+    steps:
+      - *restore_repo
+      - *restore_node_modules
+      - run: node_modules/.bin/ember try:one ember-lts-2.18 --skip-cleanup
+
   test-release:
     <<: *container_config
     steps:
@@ -117,6 +124,10 @@ workflows:
           requires:
             - install_dependencies
 
+      - test-lts-2.18:
+          requires:
+            - install_dependencies
+
       - test-1-13:
           requires:
             - install_dependencies
@@ -141,6 +152,7 @@ workflows:
           requires:
             - test-lts-2.12
             - test-lts-2.16
+            - test-lts-2.18
             - test-1-13
             - test-default
             - test-release
