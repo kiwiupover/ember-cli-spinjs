@@ -28,7 +28,16 @@ module.exports = {
         output: {
           file: 'spin.js',
           format: 'es'
-        }
+        },
+        onwarn: function(warning) {
+          // Suppress known error message caused by TypeScript compiled code with Rollup
+          // https://github.com/rollup/rollup/wiki/Troubleshooting#this-is-undefined
+          if (warning.code === 'THIS_IS_UNDEFINED') {
+            return;
+          }
+          // eslint-disable-next-line no-console
+          console.log("Rollup warning: ", warning.message);
+        },
       }
     });
 
