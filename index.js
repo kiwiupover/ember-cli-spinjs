@@ -2,22 +2,27 @@
 'use strict';
 
 const Rollup = require('broccoli-rollup');
-const transformer = require('ember-cli-es6-transform');
 const mergeTrees = require('broccoli-merge-trees');
+const path = require('path');
+const resolve = require('resolve');
+const transformer = require('ember-cli-es6-transform');
 
 module.exports = {
   name: 'ember-cli-spinjs',
 
   included(app) {
-    this._super.included.apply(app, arguments);
+    // this._super.included.apply(app, arguments);
+    this._super.included.apply(this, arguments);
+    this.app = this._findHost();
 
     app.import('vendor/spin.js');
   },
 
   treeForVendor(tree) {
+    const spinJsPath = path.join(resolve.sync('spin.js'), '..');
     let allTrees = [];
 
-    let rollupTree = new Rollup('./node_modules/spin.js', {
+    let rollupTree = new Rollup(spinJsPath, {
       rollup: {
         input: 'spin.js',
         output: {
@@ -27,7 +32,7 @@ module.exports = {
       }
     });
 
-    const babel = this.parent.findAddonByName('ember-cli-babel');
+    const babel = this.app.project.findAddonByName('ember-cli-babel');
     const babelOptions = babel.buildBabelOptions();
     const es6Tree = transformer.es6Transform(rollupTree, babelOptions);
 
