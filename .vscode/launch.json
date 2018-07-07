@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Ember CLI",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/ember-cli/bin/ember",
+            "args": [
+                "serve"
+            ]
+        }
+    ]
+}
