@@ -62,7 +62,7 @@
     "broccoli-rollup": "^2.0.0",
     "ember-cli-babel": "^6.6.0",
     "ember-cli-es6-transform": "^0.0.3",
-    "spin.js": "^3.0.0"
+    "spin.js": "^4.0.0"
   },
   "bugs": {
     "url": "https://github.com/kiwiupover/ember-cli-spinjs/issues"
