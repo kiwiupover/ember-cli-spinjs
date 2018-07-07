@@ -50,7 +50,6 @@ Spinning Lines
 ```
 Fast spinning blue dots.
 
-
 ### Dependencies
 
 ##### Spin.js
