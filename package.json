@@ -60,7 +60,7 @@
   "dependencies": {
     "broccoli-merge-trees": "^2.0.0",
     "broccoli-rollup": "^2.0.0",
-    "ember-cli-babel": "^6.6.0",
+    "ember-cli-babel": "^7.1.0",
     "ember-cli-es6-transform": "^0.0.3",
     "spin.js": "^3.0.0"
   },
