@@ -1,10 +1,11 @@
 /* eslint-env node */
 'use strict';
 
-const Rollup = require('broccoli-rollup');
-const mergeTrees = require('broccoli-merge-trees');
 const path = require('path');
 const resolve = require('resolve');
+const Rollup = require('broccoli-rollup');
+const Funnel = require('broccoli-funnel');
+const mergeTrees = require('broccoli-merge-trees');
 const transformer = require('ember-cli-es6-transform');
 
 module.exports = {
@@ -20,6 +21,7 @@ module.exports = {
 
   treeForVendor(tree) {
     const spinJsPath = path.join(resolve.sync('spin.js'), '..');
+
     let allTrees = [];
 
     let rollupTree = new Rollup(spinJsPath, {
@@ -54,5 +56,21 @@ module.exports = {
     }
 
     return mergeTrees(allTrees);
+  },
+
+  treeForAddonStyles: function (tree) {
+    const spinJsPath = path.join(resolve.sync('spin.js'), '..');
+
+    let spinJsCSSTree = new Funnel(spinJsPath, {
+      include: ['spin.css']
+    });
+
+    let allCSSTrees = [spinJsCSSTree];
+
+    if (tree) {
+      allCSSTrees.push(tree);
+    }
+
+    return mergeTrees(allCSSTrees);
   }
 };
