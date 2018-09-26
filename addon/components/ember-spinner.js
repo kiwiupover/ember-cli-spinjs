@@ -1,7 +1,7 @@
 /* global require */
 
 import { Spinner } from 'spin';
-import { merge } from '@ember/polyfills';
+import { assign } from '@ember/polyfills';
 import Component from '@ember/component';
 
 export default Component.extend({
@@ -62,7 +62,7 @@ export default Component.extend({
       configArgs = require(configFile).default;
     }
 
-    this.spinnerArgs = merge(opts, configArgs);
+    this.spinnerArgs = assign(opts, configArgs);
   },
 
   didInsertElement() {
