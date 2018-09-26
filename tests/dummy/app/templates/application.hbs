@@ -1,4 +1,4 @@
-<h2 id='title'>Ember Spinner</h2>
+<h2 id="title">Ember Spinner</h2>
 
 Default<br>
 {{ember-spinner}}
@@ -7,20 +7,44 @@ Default<br>
 </div>
 
 Spinning Lines<br>
-{{ember-spinner lines=11 length=16 radius=20 width=8 rotate=10 speed='1.1' color='#3498DB'}}
+{{ember-spinner
+  lines=11
+  length=16
+  radius=20
+  width=8
+  rotate=10
+  speed="1.1"
+  color="#3498DB"
+}}
 
 <div class="code">
   &#123;&#123;ember-spinner lines=11 length=16 radius=20 width=8 rotate=10 speed='1.1' color='#3498DB'&#125;&#125;
 </div>
 
 Fast orange balls<br>
-{{ember-spinner lines=8 radius=15 length=0 width=10 rotate=0 speed="3.4" color='orange'}}
+{{ember-spinner
+  lines=8
+  radius=15
+  length=0
+  width=10
+  rotate=0
+  speed="3.4"
+  color="orange"
+}}
 <div class="code">
   &#123;&#123;ember-spinner lines=12 radius=10 length=0 width=10 rotate=0 speed='3.4' color='orange'&#125;&#125;
 </div>
 
 Slow blue balls<br>
-{{ember-spinner lines=30 radius=10 length=0 width=10 opacity=0 trail=75 color='blue'}}
+{{ember-spinner
+  lines=30
+  radius=10
+  length=0
+  width=10
+  opacity=0
+  trail=75
+  color="blue"
+}}
 <div class="code">
   &#123;&#123;ember-spinner lines=30 radius=10 length=0 width=10 opacity=0 trail=75 color='blue'&#125;&#125;
 </div>
@@ -28,14 +52,14 @@ Slow blue balls<br>
 <h3>Using a Config File</h3>
 
 Using a config file called standard<br>
-{{ember-spinner config='standard'}}
+{{ember-spinner config="standard"}}
 
 <div class="code">
   &#123;&#123;ember-spinner config='standard'&#125;&#125;
 </div>
 
 With a config file called small<br>
-{{ember-spinner config='small'}}
+{{ember-spinner config="small"}}
 
 <div class="code">
   &#123;&#123;ember-spinner config='small'&#125;&#125;

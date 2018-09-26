@@ -1,7 +1,11 @@
 import { module, test } from 'qunit';
-import { setupRenderingTest } from 'ember-qunit';
-import { findAll, render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
+import { setupRenderingTest } from 'ember-qunit';
+
+import {
+  findAll,
+  render
+} from '@ember/test-helpers';
 
 module('Integration | Component | ember spinner', function(hooks) {
   setupRenderingTest(hooks);
@@ -21,7 +25,7 @@ module('Integration | Component | ember spinner', function(hooks) {
     await render(hbs`{{ember-spinner lines=lines}}`);
 
     assert.equal(findAll('.spinner').length, 1, 'Creates a wrapper div with the class "spinner"');
-    assert.equal(this.$('.spinner:first > div').length, lines, 'can configure number of lines');
+    assert.equal(findAll('.spinner > div').length, lines, 'can configure number of lines');
   });
 
   test('can add multiple spinners', async function(assert) {
