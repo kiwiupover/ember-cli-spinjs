@@ -40,14 +40,14 @@ jobs:
           paths:
             - node_modules
 
-  deploy_master:
-      <<: *container_config
-      steps:
-        - *restore_repo
-        - *restore_node_modules
-        - run:
-            name: Deploy Master
-            command: yarn deploy
+  # deploy_master:
+  #     <<: *container_config
+  #     steps:
+  #       - *restore_repo
+  #       - *restore_node_modules
+  #       - run:
+  #           name: Deploy Master
+  #           command: yarn deploy
 
   test-1-13:
     <<: *container_config
@@ -148,15 +148,15 @@ workflows:
           requires:
             - install_dependencies
 
-      - deploy_master:
-          requires:
-            - test-lts-2.12
-            - test-lts-2.16
-            - test-lts-2.18
-            - test-1-13
-            - test-default
-            - test-release
-            - test-beta
-          filters:
-            branches:
-              only: master
+      # - deploy_master:
+      #     requires:
+      #       - test-lts-2.12
+      #       - test-lts-2.16
+      #       - test-lts-2.18
+      #       - test-1-13
+      #       - test-default
+      #       - test-release
+      #       - test-beta
+      #     filters:
+      #       branches:
+      #         only: master
