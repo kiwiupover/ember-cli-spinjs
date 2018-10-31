@@ -8,6 +8,6 @@ module('Acceptance | ember spinner', function(hooks) {
   test('The index displays six ember-spinner', async function(assert) {
     await visit('/');
 
-    assert.equal(findAll('.spinner-display').length, 6);
+    assert.equal(findAll('.spinner-display').length, 7);
   });
 });
