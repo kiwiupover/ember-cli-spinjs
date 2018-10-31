@@ -1,6 +1,6 @@
 /* global require */
 
-import { Spinner } from 'spin';
+import { Spinner } from 'spin.js';
 import { assign } from '@ember/polyfills';
 import Component from '@ember/component';
 
