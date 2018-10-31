@@ -61,9 +61,8 @@
   },
   "dependencies": {
     "broccoli-merge-trees": "^3.0.1",
-    "broccoli-rollup": "^2.0.0",
-    "ember-cli-babel": "^6.16.0",
-    "ember-cli-es6-transform": "^0.0.5",
+    "ember-auto-import": "^1.2.15",
+    "ember-cli-babel": "^7.1.2",
     "spin.js": "^4.0.0"
   },
   "bugs": {
