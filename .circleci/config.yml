@@ -34,6 +34,7 @@ jobs:
     steps:
       - *restore_repo
       - *restore_node_modules
+      - run: node --version
       - run: yarn install
       - save_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
