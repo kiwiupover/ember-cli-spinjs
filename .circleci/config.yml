@@ -40,14 +40,14 @@ jobs:
           paths:
             - node_modules
 
-  # deploy_master:
-  #     <<: *container_config
-  #     steps:
-  #       - *restore_repo
-  #       - *restore_node_modules
-  #       - run:
-  #           name: Deploy Master
-  #           command: yarn deploy
+  deploy_master:
+      <<: *container_config
+      steps:
+        - *restore_repo
+        - *restore_node_modules
+        - run:
+            name: Deploy Master
+            command: yarn deploy
 
   test-1-13:
     <<: *container_config
