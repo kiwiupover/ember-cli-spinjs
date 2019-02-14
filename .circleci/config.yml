@@ -116,47 +116,47 @@ workflows:
           requires:
             - checkout_code
 
-      - test-lts-2.12:
-          requires:
-            - install_dependencies
-
-      - test-lts-2.16:
-          requires:
-            - install_dependencies
-
-      - test-lts-2.18:
-          requires:
-            - install_dependencies
-
-      - test-1-13:
-          requires:
-            - install_dependencies
+      # - test-lts-2.12:
+      #     requires:
+      #       - install_dependencies
+      #
+      # - test-lts-2.16:
+      #     requires:
+      #       - install_dependencies
+      #
+      # - test-lts-2.18:
+      #     requires:
+      #       - install_dependencies
+      #
+      # - test-1-13:
+      #     requires:
+      #       - install_dependencies
 
       - test-default:
           requires:
             - install_dependencies
 
-      - test-release:
-          requires:
-            - install_dependencies
-
-      - test-beta:
-          requires:
-            - install_dependencies
-
-      - test-canary:
-          requires:
-            - install_dependencies
-
-      # - deploy_master:
+      # - test-release:
       #     requires:
-      #       - test-lts-2.12
-      #       - test-lts-2.16
-      #       - test-lts-2.18
-      #       - test-1-13
-      #       - test-default
-      #       - test-release
-      #       - test-beta
+      #       - install_dependencies
+      #
+      # - test-beta:
+      #     requires:
+      #       - install_dependencies
+      #
+      # - test-canary:
+      #     requires:
+      #       - install_dependencies
+
+      - deploy_master:
+          requires:
+            # - test-lts-2.12
+            # - test-lts-2.16
+            # - test-lts-2.18
+            # - test-1-13
+            - test-default
+            # - test-release
+            # - test-beta
       #     filters:
       #       branches:
       #         only: master
