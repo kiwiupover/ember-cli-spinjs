@@ -47,9 +47,7 @@ jobs:
         - *restore_repo
         - *restore_node_modules
         - run: export EXIT=$?
-        - run:
-            name: Deploy Master
-            command: yarn deploy
+        - run: node_modules/.bin/ember surge
         - run: echo EXIT
         - run: exit 1
 
