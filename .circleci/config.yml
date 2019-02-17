@@ -46,9 +46,11 @@ jobs:
       steps:
         - *restore_repo
         - *restore_node_modules
+        - run: export EXIT=$?
         - run:
             name: Deploy Master
             command: yarn deploy
+        - run: echo EXIT
 
   test-1-13:
     <<: *container_config
