@@ -41,9 +41,9 @@ jobs:
         - *restore_repo
         - *restore_node_modules
         - run: export EXIT=$?
-        - run: node_modules/.bin/ember surge
-        - run: echo EXIT
+        - run: echo $EXIT
         - run: exit 1
+        - run: node_modules/.bin/ember surge
 
   test-1-13:
     <<: *container_config
