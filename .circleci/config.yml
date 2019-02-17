@@ -28,12 +28,6 @@ jobs:
           key: v1-repo-{{ .Branch }}-{{ .Revision }}
           paths:
             - .
-
-  install_dependencies:
-    <<: *container_config
-    steps:
-      - *restore_repo
-      - *restore_node_modules
       - run: node --version
       - run: yarn install
       - save_cache:
@@ -114,41 +108,37 @@ workflows:
     jobs:
       - checkout_code
 
-      - install_dependencies:
-          requires:
-            - checkout_code
-
       # - test-lts-2.12:
       #     requires:
-      #       - install_dependencies
+      #       - checkout_code
       #
       # - test-lts-2.16:
       #     requires:
-      #       - install_dependencies
+      #       - checkout_code
       #
       # - test-lts-2.18:
       #     requires:
-      #       - install_dependencies
+      #       - checkout_code
       #
       # - test-1-13:
       #     requires:
-      #       - install_dependencies
+      #       - checkout_code
 
       # - test-default:
       #     requires:
-      #       - install_dependencies
+      #       - checkout_code
 
       # - test-release:
       #     requires:
-      #       - install_dependencies
+      #       - checkout_code
       #
       # - test-beta:
       #     requires:
-      #       - install_dependencies
+      #       - checkout_code
       #
       # - test-canary:
       #     requires:
-      #       - install_dependencies
+      #       - checkout_code
 
       - deploy_master:
           requires:
@@ -156,7 +146,7 @@ workflows:
             # - test-lts-2.16
             # - test-lts-2.18
             # - test-1-13
-            - install_dependencies
+            - checkout_code
             # - test-release
             # - test-beta
       #     filters:
