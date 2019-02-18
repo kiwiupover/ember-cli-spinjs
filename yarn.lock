@@ -3712,16 +3712,16 @@ ember-cli-string-utils@^1.1.0:
   resolved "https://registry.yarnpkg.com/ember-cli-string-utils/-/ember-cli-string-utils-1.1.0.tgz#39b677fc2805f55173735376fcef278eaa4452a1"
   integrity sha1-ObZ3/CgF9VFzc1N2/O8njqpEUqE=
 
-ember-cli-surge@1.3.1-beta.12:
-  version "1.3.1-beta.12"
-  resolved "https://registry.yarnpkg.com/ember-cli-surge/-/ember-cli-surge-1.3.1-beta.12.tgz#01aef89f0b8499fa85046c05de295d00233c8fa0"
-  integrity sha512-/9Bow4Cw7ynytXIBaZz1siBsuLFnp6OZhRm6YTFCApC+uo6Lv4QoEzuiABufsqwRXRW0xmrT8KCSPh2k9pVvvA==
+ember-cli-surge@1.3.1-beta.13:
+  version "1.3.1-beta.13"
+  resolved "https://registry.yarnpkg.com/ember-cli-surge/-/ember-cli-surge-1.3.1-beta.13.tgz#4c8d7f67017d17f6f1103e9a3808f55af603d893"
+  integrity sha512-B5XkwmdmaN2nF5cuUXzBxqcoipOFGIJAonA/g8bZdXE53DoEfy3XhhKiFvtsBy8ZY6N3wdmMsn5BCwHRz0n5Ag==
   dependencies:
     console-ui "^2.0.0"
     ember-cli-babel "^6.16.0"
     lodash "^4.13.1"
     rsvp "~4.8.0"
-    surge "github:kiwiupover/surge#a668aa4705a7e4d9180c7ff044bc2601fcab4b18"
+    surge "github:kiwiupover/surge#b556483a920d85fa054d3dad12a739cb9b67bfdc"
 
 ember-cli-template-lint@^1.0.0-beta.1:
   version "1.0.0-beta.2"
@@ -8977,9 +8977,9 @@ surge-ignore@0.2.0:
   resolved "https://registry.yarnpkg.com/surge-ignore/-/surge-ignore-0.2.0.tgz#5a7f8a20a71188cf9e75a2cfe8eb182de90daf3b"
   integrity sha1-Wn+KIKcRiM+edaLP6OsYLekNrzs=
 
-"surge@github:kiwiupover/surge#a668aa4705a7e4d9180c7ff044bc2601fcab4b18":
+"surge@github:kiwiupover/surge#b556483a920d85fa054d3dad12a739cb9b67bfdc":
   version "0.20.1"
-  resolved "https://codeload.github.com/kiwiupover/surge/tar.gz/a668aa4705a7e4d9180c7ff044bc2601fcab4b18"
+  resolved "https://codeload.github.com/kiwiupover/surge/tar.gz/b556483a920d85fa054d3dad12a739cb9b67bfdc"
   dependencies:
     cli-table2 "^0.2.0"
     du "0.1.0"
