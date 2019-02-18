@@ -42,7 +42,6 @@ jobs:
         - *restore_node_modules
         - run: export EXIT=$?
         - run: echo $EXIT
-        - run: exit 1
         - run: node_modules/.bin/ember surge
 
   test-1-13:
