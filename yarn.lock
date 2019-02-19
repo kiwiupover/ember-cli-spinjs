@@ -3712,10 +3712,10 @@ ember-cli-string-utils@^1.1.0:
   resolved "https://registry.yarnpkg.com/ember-cli-string-utils/-/ember-cli-string-utils-1.1.0.tgz#39b677fc2805f55173735376fcef278eaa4452a1"
   integrity sha1-ObZ3/CgF9VFzc1N2/O8njqpEUqE=
 
-ember-cli-surge@1.3.1-beta.13:
-  version "1.3.1-beta.13"
-  resolved "https://registry.yarnpkg.com/ember-cli-surge/-/ember-cli-surge-1.3.1-beta.13.tgz#4c8d7f67017d17f6f1103e9a3808f55af603d893"
-  integrity sha512-B5XkwmdmaN2nF5cuUXzBxqcoipOFGIJAonA/g8bZdXE53DoEfy3XhhKiFvtsBy8ZY6N3wdmMsn5BCwHRz0n5Ag==
+ember-cli-surge@1.3.1-beta.14:
+  version "1.3.1-beta.14"
+  resolved "https://registry.yarnpkg.com/ember-cli-surge/-/ember-cli-surge-1.3.1-beta.14.tgz#fbb760eebd083c0d291afc34fdf93a28fa701105"
+  integrity sha512-uQd9Q4N0aL4ag9EWE9/U0LD6FATy2YGfIBldnUBrEqPRxJdzyrfdtvR/2iuaXry5zuLWJQ/qFjdKT1MXpgIIDQ==
   dependencies:
     console-ui "^2.0.0"
     ember-cli-babel "^6.16.0"
