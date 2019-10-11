@@ -62,7 +62,7 @@
   "dependencies": {
     "broccoli-funnel": "^2.0.1",
     "broccoli-merge-trees": "^3.0.1",
-    "ember-auto-import": "^1.2.15",
+    "ember-auto-import": "^1.5.3",
     "ember-cli-babel": "^7.1.2",
     "resolve": "^1.8.1",
     "spin.js": "^4.0.0"
